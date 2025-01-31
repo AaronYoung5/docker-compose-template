@@ -13,7 +13,7 @@ services:
         IMAGE_BASE: "debian"
         IMAGE_TAG: "bookworm-slim"
         USER_GROUPS: "dialout video"
-        PIP_REQUIREMENTS: "numpy"
+        PIP_REQUIREMENTS: ""
         APT_DEPENDENCIES: ""
         MAMBA_PACKAGES: "python=3.12"
     volumes:
