@@ -31,3 +31,7 @@ RUN [ -z "${MAMBA_PACKAGES}" ] || ${MAMBA_EXE} install -n ${PROJECT} ${MAMBA_PAC
 
 ARG PIP_REQUIREMENTS=""
 RUN [ -z "${PIP_REQUIREMENTS}" ] || ${MAMBA_PATH}/envs/${PROJECT}/bin/python -m pip install --no-cache-dir ${PIP_REQUIREMENTS}
+
+# Run SHELL so subsequent commands are run in the new environment
+SHELL ["/bin/bash", "-c"]
+

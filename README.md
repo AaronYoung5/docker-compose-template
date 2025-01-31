@@ -39,6 +39,10 @@ INCLUDE ./docker/common/final.dockerfile
 > [!NOTE]
 > The `INCLUDE` directive is sequential in that the following snippets will inherit changes made by previous snippets. The default user when running snippets is the newly created user.
 
+### VNC
+
+A common issue in the adopting of docker-based development is the lack of immediate support for GUI applications. Another feature of this template is the addition of a NoVNC service which is capable of directly visualizing windows from within other containers on the same host. This is enabled by attaching all containers which need to be visualized to the same network as the NoVNC service (defaults to the default docker compose network). Then, a port is exposed from the NoVNC service to the host machine, which can be accessed via a web browser (i.e., `http://localhost:8080`).
+
 ### User Permissions
 
 One headache when creating docker containers is sharing files between the host and the container. For instance, a common issue is that the user in the container is often root, so files editted within the container will also be owned by root when accessed on the host. We fix this within `base.dockerfile` by accepting a `USER_UID` and `USER_GID` build argument (which both default to `1000`). We create a user within the container (defaults to the name of the project) with the given UID and GID with the intention that this will match the user on the host. This way, files created within the container will be owned by the user on the host.
