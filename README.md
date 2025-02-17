@@ -6,6 +6,11 @@ A template repository for simple docker-based linux development.
 
 The purpose of this repo is to provide a quick and easy way to get started with docker compose for linux-based development _outside_ of web development. The idea is that docker is a great place to create extensible and reusable systems for groups of developers. It's difficult, though, to create a docker image/container which is flexible for many applications. This template repo provides a few mechanisms to improve the initial setup of a docker compose project for these purposes.
 
+## Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
 ## Features
 
 ### Snippets
